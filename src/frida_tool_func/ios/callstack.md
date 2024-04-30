@@ -681,6 +681,128 @@ initCommonLibFunctions()
 
 （相关）输出：
 
+* 新
+  * 图
+    * ![frida_js_ios_callstack_detail_example](../../assets/img/frida_js_ios_callstack_detail_example_1.png)
+    * ![frida_js_ios_callstack_detail_example](../../assets/img/frida_js_ios_callstack_detail_example_2.png)
+
+```bash
+[iPhone::WhatsApp ]-> ==================== [*] Detected call to: +[NSURLRequest requestWithURL:]
+[*] ================================================xbacktrace==========================================
+[*] 0   SharedModules       mem:0x109cb1910  file:0xc29910     +[WACertPinning sharedPinnedWhatsAppCertificateWithoutDomainValidation]
+[*] 1   WhatsApp            mem:0x106d74cb4  file:0x102304cb4  +[WARegistrationURLBuilder preChatdABPropURLRequestWithPhoneNumber:abHash:]
+[*] 2   WhatsApp            mem:0x106649ff4  file:0x101bd9ff4  -[WACompanionModeGatingManager fetchPhoneCompanionAbPropValue:]
+[*] 3   WhatsApp            mem:0x106649f80  file:0x101bd9f80  -[WACompanionModeGatingManager shouldShowPhoneCompanionEntryPointWithCompletion:]
+[*] 4   WhatsApp            mem:0x106d3a1fc  file:0x1022ca1fc  -[WAVerificationRegistrationController fetchPhoneCompanionEntryPointPreChatdAbProp]
+[*] 5   WhatsApp            mem:0x106d39ee4  file:0x1022c9ee4  -[WAVerificationRegistrationController didAcceptedTOSMoveToNextScreen]
+[*] 6   WhatsApp            mem:0x106d316a8  file:0x1022c16a8  -[WAConsumerWelcomeViewController acceptAction:]
+[*] 7   UIKitCore           mem:0x1952e99ac  file:0x1845199ac  -[UIApplication sendAction:to:from:forEvent:]
+[*] 8   UIKitCore           mem:0x194d1ffbc  file:0x183f4ffbc  -[UIControl sendAction:to:forEvent:]
+[*] 9   UIKitCore           mem:0x194d20320  file:0x183f50320  -[UIControl _sendActionsForEvents:withEvent:]
+[*] 10  UIKitCore           mem:0x194d1f33c  file:0x183f4f33c  -[UIControl touchesEnded:withEvent:]
+[*] 11  UIKitCore           mem:0x195323050  file:0x184553050  -[UIWindow _sendTouchesForEvent:]
+[*] 12  UIKitCore           mem:0x195324390  file:0x184554390  -[UIWindow sendEvent:]
+[*] 13  UIKitCore           mem:0x195300a9c  file:0x184530a9c  -[UIApplication sendEvent:]
+[*] 14  WhatsApp            mem:0x1064a87b8  file:0x101a387b8  -[WAApplication sendEvent:]
+[*] 15  UIKitCore           mem:0x195378c20  file:0x1845a8c20  __dispatchPreprocessedEventFromEventQueue
+[*] ==============================================================================================================
+argCount:  1
+---------- [0] curArgPtr=0x2838aa180
+curArgPtrObj: className= NSURL, value= https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=2155550000&rc=0
+==================== [*] Detected call to: -[NSURLRequest initWithURL:]
+[*] ================================================xbacktrace==========================================
+[*] 0   CFNetwork           mem:0x1944a9614  file:0x1836d9614  +[NSURLRequest requestWithURL:]
+[*] 1   SharedModules       mem:0x109cb1910  file:0xc29910     +[WACertPinning sharedPinnedWhatsAppCertificateWithoutDomainValidation]
+[*] 2   WhatsApp            mem:0x106d74cb4  file:0x102304cb4  +[WARegistrationURLBuilder preChatdABPropURLRequestWithPhoneNumber:abHash:]
+[*] 3   WhatsApp            mem:0x106649ff4  file:0x101bd9ff4  -[WACompanionModeGatingManager fetchPhoneCompanionAbPropValue:]
+[*] 4   WhatsApp            mem:0x106649f80  file:0x101bd9f80  -[WACompanionModeGatingManager shouldShowPhoneCompanionEntryPointWithCompletion:]
+[*] 5   WhatsApp            mem:0x106d3a1fc  file:0x1022ca1fc  -[WAVerificationRegistrationController fetchPhoneCompanionEntryPointPreChatdAbProp]
+[*] 6   WhatsApp            mem:0x106d39ee4  file:0x1022c9ee4  -[WAVerificationRegistrationController didAcceptedTOSMoveToNextScreen]
+[*] 7   WhatsApp            mem:0x106d316a8  file:0x1022c16a8  -[WAConsumerWelcomeViewController acceptAction:]
+[*] 8   UIKitCore           mem:0x1952e99ac  file:0x1845199ac  -[UIApplication sendAction:to:from:forEvent:]
+[*] 9   UIKitCore           mem:0x194d1ffbc  file:0x183f4ffbc  -[UIControl sendAction:to:forEvent:]
+[*] 10  UIKitCore           mem:0x194d20320  file:0x183f50320  -[UIControl _sendActionsForEvents:withEvent:]
+[*] 11  UIKitCore           mem:0x194d1f33c  file:0x183f4f33c  -[UIControl touchesEnded:withEvent:]
+[*] 12  UIKitCore           mem:0x195323050  file:0x184553050  -[UIWindow _sendTouchesForEvent:]
+[*] 13  UIKitCore           mem:0x195324390  file:0x184554390  -[UIWindow sendEvent:]
+[*] 14  UIKitCore           mem:0x195300a9c  file:0x184530a9c  -[UIApplication sendEvent:]
+[*] 15  WhatsApp            mem:0x1064a87b8  file:0x101a387b8  -[WAApplication sendEvent:]
+[*] ==============================================================================================================
+argCount:  1
+---------- [0] curArgPtr=0x2838aa180
+curArgPtrObj: className= NSURL, value= https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=2155550000&rc=0
+==================== [*] Detected call to: -[NSMutableURLRequest initWithURL:]
+[*] ================================================xbacktrace==========================================
+[*] 0   CFNetwork           mem:0x1944a9614  file:0x1836d9614  +[NSURLRequest requestWithURL:]
+[*] 1   SharedModules       mem:0x109cb1910  file:0xc29910     +[WACertPinning sharedPinnedWhatsAppCertificateWithoutDomainValidation]
+[*] 2   WhatsApp            mem:0x106d74cb4  file:0x102304cb4  +[WARegistrationURLBuilder preChatdABPropURLRequestWithPhoneNumber:abHash:]
+[*] 3   WhatsApp            mem:0x106649ff4  file:0x101bd9ff4  -[WACompanionModeGatingManager fetchPhoneCompanionAbPropValue:]
+[*] 4   WhatsApp            mem:0x106649f80  file:0x101bd9f80  -[WACompanionModeGatingManager shouldShowPhoneCompanionEntryPointWithCompletion:]
+[*] 5   WhatsApp            mem:0x106d3a1fc  file:0x1022ca1fc  -[WAVerificationRegistrationController fetchPhoneCompanionEntryPointPreChatdAbProp]
+[*] 6   WhatsApp            mem:0x106d39ee4  file:0x1022c9ee4  -[WAVerificationRegistrationController didAcceptedTOSMoveToNextScreen]
+[*] 7   WhatsApp            mem:0x106d316a8  file:0x1022c16a8  -[WAConsumerWelcomeViewController acceptAction:]
+[*] 8   UIKitCore           mem:0x1952e99ac  file:0x1845199ac  -[UIApplication sendAction:to:from:forEvent:]
+[*] 9   UIKitCore           mem:0x194d1ffbc  file:0x183f4ffbc  -[UIControl sendAction:to:forEvent:]
+[*] 10  UIKitCore           mem:0x194d20320  file:0x183f50320  -[UIControl _sendActionsForEvents:withEvent:]
+[*] 11  UIKitCore           mem:0x194d1f33c  file:0x183f4f33c  -[UIControl touchesEnded:withEvent:]
+[*] 12  UIKitCore           mem:0x195323050  file:0x184553050  -[UIWindow _sendTouchesForEvent:]
+[*] 13  UIKitCore           mem:0x195324390  file:0x184554390  -[UIWindow sendEvent:]
+[*] 14  UIKitCore           mem:0x195300a9c  file:0x184530a9c  -[UIApplication sendEvent:]
+[*] 15  WhatsApp            mem:0x1064a87b8  file:0x101a387b8  -[WAApplication sendEvent:]
+[*] ==============================================================================================================
+argCount:  1
+---------- [0] curArgPtr=0x2838aa180
+curArgPtrObj: className= NSURL, value= https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=2155550000&rc=0
+==================== [*] Detected call to: -[NSURLRequest initWithURL:cachePolicy:timeoutInterval:]
+[*] ================================================xbacktrace==========================================
+[*] 0   CFNetwork           mem:0x1944a9614  file:0x1836d9614  +[NSURLRequest requestWithURL:]
+[*] 1   SharedModules       mem:0x109cb1910  file:0xc29910     +[WACertPinning sharedPinnedWhatsAppCertificateWithoutDomainValidation]
+[*] 2   WhatsApp            mem:0x106d74cb4  file:0x102304cb4  +[WARegistrationURLBuilder preChatdABPropURLRequestWithPhoneNumber:abHash:]
+[*] 3   WhatsApp            mem:0x106649ff4  file:0x101bd9ff4  -[WACompanionModeGatingManager fetchPhoneCompanionAbPropValue:]
+[*] 4   WhatsApp            mem:0x106649f80  file:0x101bd9f80  -[WACompanionModeGatingManager shouldShowPhoneCompanionEntryPointWithCompletion:]
+[*] 5   WhatsApp            mem:0x106d3a1fc  file:0x1022ca1fc  -[WAVerificationRegistrationController fetchPhoneCompanionEntryPointPreChatdAbProp]
+[*] 6   WhatsApp            mem:0x106d39ee4  file:0x1022c9ee4  -[WAVerificationRegistrationController didAcceptedTOSMoveToNextScreen]
+[*] 7   WhatsApp            mem:0x106d316a8  file:0x1022c16a8  -[WAConsumerWelcomeViewController acceptAction:]
+[*] 8   UIKitCore           mem:0x1952e99ac  file:0x1845199ac  -[UIApplication sendAction:to:from:forEvent:]
+[*] 9   UIKitCore           mem:0x194d1ffbc  file:0x183f4ffbc  -[UIControl sendAction:to:forEvent:]
+[*] 10  UIKitCore           mem:0x194d20320  file:0x183f50320  -[UIControl _sendActionsForEvents:withEvent:]
+[*] 11  UIKitCore           mem:0x194d1f33c  file:0x183f4f33c  -[UIControl touchesEnded:withEvent:]
+[*] 12  UIKitCore           mem:0x195323050  file:0x184553050  -[UIWindow _sendTouchesForEvent:]
+[*] 13  UIKitCore           mem:0x195324390  file:0x184554390  -[UIWindow sendEvent:]
+[*] 14  UIKitCore           mem:0x195300a9c  file:0x184530a9c  -[UIApplication sendEvent:]
+[*] 15  WhatsApp            mem:0x1064a87b8  file:0x101a387b8  -[WAApplication sendEvent:]
+[*] ==============================================================================================================
+argCount:  3
+---------- [0] curArgPtr=0x2838aa180
+curArgPtrObj: className= NSURL, value= https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=2155550000&rc=0
+---------- [1] curArgPtr=0x0
+---------- [2] curArgPtr=0x0
+onLeave: retValObjStr=<NSMutableURLRequest: 0x2814fa130> { URL: https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=2155550000&rc=0 }
+onLeave: retValObjStr=<NSMutableURLRequest: 0x2814fa130> { URL: https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=2155550000&rc=0 }
+onLeave: retValObjStr=<NSMutableURLRequest: 0x2814fa130> { URL: https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=2155550000&rc=0 }
+onLeave: retValObjStr=<NSMutableURLRequest: 0x2814fa130> { URL: https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=2155550000&rc=0 }
+==================== [*] Detected call to: -[NSMutableURLRequest setHTTPBody:]
+[*] ================================================xbacktrace==========================================
+[*] 0   CFNetwork           mem:0x1944a7c10  file:0x1836d7c10  -[__NSCFLocalSessionTask _onqueue_strippedMutableRequest]
+[*] 1   CFNetwork           mem:0x1944c8c94  file:0x1836f8c94  0x25c94 (0x1836f8c94)
+[*] 2   CFNetwork           mem:0x1944a4b44  file:0x1836d4b44  -[__NSCFLocalSessionTask _onqueue_completeInitialization]
+[*] 3   CFNetwork           mem:0x1946d2188  file:0x183902188  0x22f188 (0x183902188)
+[*] 4   libdispatch.dylib   mem:0x190f2e610  file:0x18015e610  _dispatch_call_block_and_release
+[*] 5   libdispatch.dylib   mem:0x190f2f184  file:0x18015f184  _dispatch_client_callout
+[*] 6   libdispatch.dylib   mem:0x190edb404  file:0x18010b404  _dispatch_lane_serial_drain$VARIANT$mp
+[*] 7   libdispatch.dylib   mem:0x190edbe28  file:0x18010be28  _dispatch_lane_invoke$VARIANT$mp
+[*] 8   libdispatch.dylib   mem:0x190ee5314  file:0x180115314  _dispatch_workloop_worker_thread
+[*] 9   libsystem_pthread.dylibmem:0x190f7eb88  file:0x1801aeb88  _pthread_wqthread
+[*] ==============================================================================================================
+argCount:  1
+---------- [0] curArgPtr=0x0
+onLeave: retValObjStr=nil
+```
+
+* 旧
+  * 图
+    * ![frida_ios_call_stack_symbol](../../assets/img/frida_ios_call_stack_symbol.png)
+
 ```bash
 ======================================= Called: +[NSURLRequest requestWithURL:]  =======================================
 ------------------------ printFunctionCallStack_symbol  ------------------------
@@ -705,11 +827,3 @@ argCount:  1
 ---------------- [0] curArgPtr=0x283c61e00  ----------------
 curArgPtrObj: className= NSURL, value= https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=8784650468&rc=0&ab_hash=1zduBG
 ```
-
-* 截图
-  * 新
-    * ![frida_ios_call_stack_symbol](../../../assets/img/frida_ios_call_stack_symbol.png)
-  * 旧
-    * ![frida_js_ios_callstack_detail_example](../../../assets/img/frida_js_ios_callstack_detail_example.png)
-
-

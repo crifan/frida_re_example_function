@@ -2,11 +2,44 @@
 
 此处整理Frida的js中，通用的js方面的函数：
 
-* 常用写法：
-  * 判断key是否在字典dict中
-  	```js
-  	curKey in someDict
-  	```
+### 小的代码段
+
+### 判断字符串是否在dict的key中
+
+* 判断key是否在字典dict中
+	```js
+	curKey in someDict
+	```
+
+举例：
+
+```js
+let cfgPrintOnceStackExceptionDict = {
+    // key: arg list(arg0, arg1, ...)
+    "+[NSURLRequest requestWithURL:]": [],
+    "+[WAURLQueryItem queryItemWithName:value:]": ["ENC", undefined],
+}
+
+var iOSObjCallStr = "+[WAURLQueryItem queryItemWithName:value:]"
+var isMatch = iOSObjCallStr in cfgPrintOnceStackExceptionDict
+console.log("isMatch=" + isMatch)
+```
+
+输出：`isMatch=true`
+
+### 获取列表的子列表
+
+```js
+var argList = [0, 1, 2, 3, 4]
+var subArgList = argList.slice(2)
+console.log("argList=" + argList + " -> subArgList=" + subArgList)
+```
+
+输出：
+
+```bash
+argList=0,1,2,3,4 -> subArgList=2,3,4
+```
 
 ## 对象=Object: Dict/List/...
 
