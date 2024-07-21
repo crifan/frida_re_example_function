@@ -10,4 +10,5 @@
 * 【已解决】iOS逆向WhatsApp：Frida的js的函数堆栈打印优化：给个别特定函数加到排除列表
 * 【已解决】iOS逆向WhatsApp：Frida的js的函数堆栈打印优化：支持特定函数的特定参数值时打印
 * 【已解决】Frida无法hook到类ActivityManagerService：hook系统进程system_server
+* 【未解决】Frida去hook抖音：打印所有的Java的类名
 * 

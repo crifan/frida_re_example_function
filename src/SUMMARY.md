@@ -25,6 +25,7 @@
       * [Preferences中Apple账号登录全过程](frida_re_example/frida_trace/ios_objc/preferences_full_apple_login.md)
     * [Android](frida_re_example/frida_trace/android/README.md)
       * [commands](frida_re_example/frida_trace/android/commands.md)
+      * [demo示例](frida_re_example/frida_trace/android/hook_demo.md)
       * [安卓进程system_server](frida_re_example/frida_trace/android/system_server.md)
 * [Frida工具函数](frida_tool_func/README.md)
   * [通用js函数](frida_tool_func/common_js/README.md)
