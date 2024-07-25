@@ -183,22 +183,22 @@ public static boolean X.0Prr.LJII()
 public static void X.0Prr.LJIIIIZZ()
 ```
 
-## getStackStr
+## genStackStr
 
 ```js
-// get current stack trace string
-function getStackStr(ThrowableCls) {
+// generate current stack trace string
+function genStackStr(ThrowableCls) {
   let newThrowable = ThrowableCls.$new()
-  // console.log("getStackStr: newThrowable=" + newThrowable)
+  // console.log("genStackStr: newThrowable=" + newThrowable)
   var stackElements = newThrowable.getStackTrace()
-  // console.log("getStackStr: stackElements=" + stackElements)
+  // console.log("genStackStr: stackElements=" + stackElements)
   var stackStr = "Stack: " + stackElements[0] //method//stackElements[0].getMethodName()
   for (var i = 1; i < stackElements.length; i++) {
     stackStr += "\n    at " + stackElements[i]
   }
   // stackStr = "\n\n" + stackStr
   stackStr = stackStr + "\n"
-  // console.log("getStackStr: stackStr=" + stackStr)
+  // console.log("genStackStr: stackStr=" + stackStr)
 
   return stackStr
 }
@@ -207,7 +207,7 @@ function getStackStr(ThrowableCls) {
 调用：
 
 ```js
-  var stackStr = getStackStr(ThrowableCls)
+  var stackStr = genStackStr(ThrowableCls)
   console.log(stackStr)
 ```
 
@@ -216,7 +216,7 @@ function getStackStr(ThrowableCls) {
 ```js
 // 打印当前调用堆栈信息 print call stack
 function PrintStack(ThrowableCls) {
-  var stackStr = getStackStr(ThrowableCls)
+  var stackStr = genStackStr(ThrowableCls)
   console.log(stackStr)
 
   // let newThrowable = ThrowableCls.$new()
@@ -235,16 +235,11 @@ function PrintStack(ThrowableCls) {
     PrintStack(ThrowableCls)
 ```
 
-## getFunctionCallStr
+## genFunctionCallStr
 
 ```js
-// get Function call string
-function getFunctionCallStr(funcName, funcParaDict){
-  // var isAMSStartSevice = funcName === "AMS.startService"
-  // if(isAMSStartSevice){
-  //   console.log("getFunctionCallStr: funcName=" + funcName + ", funcParaDict=" + toJsonStr(funcParaDict))
-  // }
-
+// generate Function call string
+function genFunctionCallStr(funcName, funcParaDict){
   var logStr = `${funcName}:`
   // var logStr = funcName + ":"
   var isFirst = true
@@ -262,10 +257,6 @@ function getFunctionCallStr(funcName, funcParaDict){
     logStr = `${logStr}${prevStr}${curParaName}=` + curParaValue
     // logStr = logStr + prevStr + curParaName + "=" + curParaValue
   }
-  
-  // if(isAMSStartSevice){
-  //   console.log("getFunctionCallStr: logStr=" + logStr)
-  // }
 
   return logStr
 }
@@ -274,44 +265,48 @@ function getFunctionCallStr(funcName, funcParaDict){
 调用：
 
 ```js
-  var functionCallStr = getFunctionCallStr(funcName, funcParaDict)
+  var functionCallStr = genFunctionCallStr(funcName, funcParaDict)
 ```
 
 ## printFunctionCallAndStack
 
 ```js
 // print Function call and stack trace string
-function printFunctionCallAndStack(funcName, funcParaDict, ThrowableCls){
-  // var isAMSStartSevice = funcName === "AMS.startService"
-  // if (isAMSStartSevice){
-  //   console.log("printFunctionCallAndStack: funcName=" + funcName + ", funcParaDict=" + toJsonStr(funcParaDict) + ", ThrowableCls=" + ThrowableCls)
-  // }
+function printFunctionCallAndStack(funcName, funcParaDict, ThrowableCls, filterList=undefined){
+  // console.log("filterList=" + filterList)
 
-  var functionCallStr = getFunctionCallStr(funcName, funcParaDict)
+  var needPrint = true
 
-  // if (isAMSStartSevice){
-  //   console.log("printFunctionCallAndStack: functionCallStr=" + functionCallStr)
-  // }
+  var functionCallStr = genFunctionCallStr(funcName, funcParaDict)
 
-  var stackStr = getStackStr(ThrowableCls)
+  var stackStr = genStackStr(ThrowableCls)
 
-  // if(isAMSStartSevice){
-  //   console.log("printFunctionCallAndStack: stackStr=" + stackStr)
-  // }
+  if (filterList != undefined) {
+    needPrint = false
 
-  var functionCallAndStackStr = `${functionCallStr}\n${stackStr}`
-  // var functionCallAndStackStr = functionCallStr + "\n" + stackStr
+    for (const curFilter of filterList) {
+      // console.log("curFilter=" + curFilter)
+      if (stackStr.includes(curFilter)) {
+        needPrint = true
+        // console.log("needPrint=" + needPrint)
+        break
+      }
+    }
+  }
 
-  // if(isAMSStartSevice){
-  //   console.log("printFunctionCallAndStack: functionCallAndStackStr=" + functionCallAndStackStr)
-  // }
-
-  // return functionCallAndStackStr
-  console.log(functionCallAndStackStr)
+  if (needPrint) {
+    var functionCallAndStackStr = `${functionCallStr}\n${stackStr}`
+    // var functionCallAndStackStr = functionCallStr + "\n" + stackStr
+  
+    // return functionCallAndStackStr
+    console.log(functionCallAndStackStr)  
+  }
 }
 ```
 
 调用：
+
+* 场景1：不传递filter，没过滤条件，直接全都打印
 
 ```js
     // ---------------------------------------- android.app.ContextImpl
@@ -338,6 +333,18 @@ function printFunctionCallAndStack(funcName, funcParaDict, ThrowableCls){
         return this.bindServiceAsUser(service, conn, flags, user)
       }
     }
+```
+
+* 场景2：传递filter，只有堆栈中出现filter的字符串，才打印
+
+```js
+      var funcName = "GlobalProxyLancet.com_ss_android_ugc_aweme_lancet_MemoryOptLancet_toString"
+      var funcParaDict = {
+        "jSONObject": jSONObject
+      }
+      // printFunctionCallAndStack(funcName, funcParaDict, ThrowableCls)
+      // printFunctionCallAndStack(funcName, funcParaDict, ThrowableCls, filterList=["X.0Pru.LIZ"])
+      printFunctionCallAndStack(funcName, funcParaDict, ThrowableCls, ["X.0Pru.LIZ"])
 ```
 
 ## findClass
