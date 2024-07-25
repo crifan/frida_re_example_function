@@ -4,6 +4,29 @@
 
 ### 小的代码段
 
+### 判断主字符串是否包含子字符串
+
+* 概述：用`str`的`includes`
+	```js
+	mainString.includes(subString)
+	```
+* 详解
+
+测试代码：
+
+```js
+  var mainStr = "Stack: X.0Pru.LIZ(Native Method)"
+  var subStr = "X.0Pru.LIZ"
+  var isMatch = mainStr.includes(subStr)
+  console.log("isMatch=" + isMatch)
+```
+
+输出：
+
+```bash
+isMatch=true
+```
+
 ### 判断字符串是否在dict的key中
 
 * 判断key是否在字典dict中

@@ -11,4 +11,5 @@
 * 【已解决】iOS逆向WhatsApp：Frida的js的函数堆栈打印优化：支持特定函数的特定参数值时打印
 * 【已解决】Frida无法hook到类ActivityManagerService：hook系统进程system_server
 * 【未解决】Frida去hook抖音：打印所有的Java的类名
+* 【已解决】Frida的js中判断字符串是否包含子字符串
 * 
