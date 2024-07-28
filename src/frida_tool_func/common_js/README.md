@@ -2,7 +2,7 @@
 
 此处整理Frida的js中，通用的js方面的函数：
 
-### 小的代码段
+## 小的代码段
 
 ### 判断主字符串是否包含子字符串
 
@@ -63,6 +63,31 @@ console.log("argList=" + argList + " -> subArgList=" + subArgList)
 ```bash
 argList=0,1,2,3,4 -> subArgList=2,3,4
 ```
+
+### 函数默认参数
+
+定义=写法 举例：
+
+```js
+function printFunctionCallAndStack(funcName, funcParaDict, ThrowableCls, filterList=undefined){
+...
+  if (filterList != undefined) {
+    ...
+  }
+...
+}
+```
+
+调用：
+
+* 不传递（带默认参数值的）最后一个参数
+	```js
+	printFunctionCallAndStack(funcName, funcParaDict, ThrowableCls)
+	```
+* 传递（带默认参数值的）最后一个参数
+	```js
+	printFunctionCallAndStack(funcName, funcParaDict, ThrowableCls, ["X.0Pru.LIZ"])
+	```
 
 ## 对象=Object: Dict/List/...
 
