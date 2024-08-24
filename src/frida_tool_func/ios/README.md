@@ -1,6 +1,64 @@
 # iOS函数
 
+最新完整代码详见：
+
+* Frida的iOS的工具类：`FridaiOSUtil`
+  * https://github.com/crifan/crifanLib/blob/master/javascript/FridaiOSUtil.js
+
+---
+
 此处整理Frida的js中，iOS（的OjbC）方面的函数：
+
+## objcArgsToArgArray
+
+```js
+/* Convert args to real Javascript Array
+
+    Note: 
+        Interceptor.attach onEnter(args), args is not real JS array -> later operation will fail
+            args.slice(2)
+            Array.from(args)
+        -> so need here to conver to real Array, then all is OK
+*/
+function objcArgsToArgArray(args, realArgCount){
+    var argsArr = Array()
+    // console.log("initial: argsArr=" + argsArr)
+    argsArr.push(args[0])
+    argsArr.push(args[1])
+    // console.log("add frist two: argsArr=" + argsArr)
+
+    for (let curArgIdx = 0; curArgIdx < realArgCount; curArgIdx++) {
+        const curArg = args[curArgIdx + 2]
+        argsArr.push(curArg)
+    }
+    // console.log("add all args: argsArr=" + argsArr)
+    return argsArr
+}
+```
+
+用法举例：
+
+```js
+Interceptor.attach(curMethod.implementation, {
+  onEnter: function(args) {
+    const realArgCount = occurrences(funcName, ":")
+    console.log("realArgCount: " + realArgCount)
+
+    args = objcArgsToArgArray(args, realArgCount)
+```
+
+效果：
+
+```js
+// 后续针对js的Array的args去操作，就不会报错了
+var realArgList = args.slice(2)
+```
+
+详见：
+
+* 【已解决】iOS逆向WhatsApp：Frida的js的函数堆栈打印优化：支持特定函数的特定参数值时打印
+* 【已解决】Frida中js去获取Interceptor.attach的onEnter的args时报错：RangeError invalid array index
+
 
 ## `objcObjToStr`：ObjC的Object转换为C的string
 

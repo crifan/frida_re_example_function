@@ -1,6 +1,9 @@
 # 参考资料
 
 * [4ch12dy/FridaLib: iOS/android frida library for reversing (github.com)](https://github.com/4ch12dy/FridaLib)
+* [Check if an Item is in an Array in JavaScript – JS Contains with Array.includes() (freecodecamp.org)](https://www.freecodecamp.org/news/check-if-an-item-is-in-an-array-in-javascript-js-contains-with-array-includes/)
+* 
+* 【已解决】Frida的js中判断int整数是否在整数列表中
 * 【已解决】Frida中js判断字符串是否在字典dict的key键中
 * 【已解决】Frida中js从数组中截取获取部分子数组元素
 * 【已解决】Frida中js打印日志log优化：自动生成中间字符串加上左右对称的单行log日志
