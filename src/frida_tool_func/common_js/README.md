@@ -3,7 +3,7 @@
 最新完整代码详见：
 
 * JS的工具类：`JsUtil`
- * https://github.com/crifan/crifanLib/blob/master/javascript/JsUtil.js
+ * https://github.com/crifan/JsFridaUtil/blob/main/JsUtil.js
 
 ---
 

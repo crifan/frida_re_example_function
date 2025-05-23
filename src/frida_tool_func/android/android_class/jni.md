@@ -166,7 +166,7 @@ class FridaUtil {
 注：
 
 * `FridaUtil`的最新完整代码，详见：
-  * https://github.com/crifan/crifanLib/blob/master/javascript/FridaUtil.js
+  * https://github.com/crifan/JsFridaUtil/blob/main/frida/FridaUtil.js
 
 调用=hook代码：
 

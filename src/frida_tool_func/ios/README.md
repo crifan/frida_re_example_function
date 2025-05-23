@@ -3,7 +3,7 @@
 最新完整代码详见：
 
 * Frida的iOS的工具类：`FridaiOSUtil`
-  * https://github.com/crifan/crifanLib/blob/master/javascript/FridaiOSUtil.js
+  * https://github.com/crifan/JsFridaUtil/blob/main/frida/FridaiOSUtil.js
 
 ---
 

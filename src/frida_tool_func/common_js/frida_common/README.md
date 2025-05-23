@@ -3,7 +3,7 @@
 最新完整代码详见：
 
 * Frida的通用的工具类：`FridaUtil`
-  * https://github.com/crifan/crifanLib/blob/master/javascript/FridaUtil.js
+  * https://github.com/crifan/JsFridaUtil/blob/main/frida/FridaUtil.js
 
 ---
 

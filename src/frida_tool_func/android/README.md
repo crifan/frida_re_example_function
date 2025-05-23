@@ -3,7 +3,7 @@
 最新完整代码详见：
 
 * Frida的Android的工具类：`FridaAndroidUtil`
-  * https://github.com/crifan/crifanLib/blob/master/javascript/FridaAndroidUtil.js
+  * https://github.com/crifan/JsFridaUtil/blob/main/frida/FridaAndroidUtil.js
 
 ---
 
