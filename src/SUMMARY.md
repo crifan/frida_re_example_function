@@ -38,6 +38,7 @@
   * [Android函数](frida_tool_func/android/README.md)
     * [Java通用](frida_tool_func/android/java_common/README.md)
       * [类的处理](frida_tool_func/android/java_common/process_class.md)
+      * [类型转换](frida_tool_func/android/java_common/convert.md)
       * [函数和属性](frida_tool_func/android/java_common/func_property.md)
       * [函数调用堆栈](frida_tool_func/android/java_common/call_stack.md)
     * [Android类](frida_tool_func/android/android_class/README.md)

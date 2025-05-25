@@ -15,4 +15,7 @@
 * 【已解决】Frida无法hook到类ActivityManagerService：hook系统进程system_server
 * 【未解决】Frida去hook抖音：打印所有的Java的类名
 * 【已解决】Frida的js中判断字符串是否包含子字符串
+* 【已解决】Frida中JavaScript中把Java的map转换成字符串
+* 【已解决】Frida中js中如何判断java的Object的字符串的值
+* 【已解决】Frida的hook类的初始化构造函数中返回值为空undefined
 * 

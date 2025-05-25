@@ -114,8 +114,8 @@ Started tracing 375 functions. Press Ctrl+C to stop.
 
 截图：
 
-![frida_trace_system_server_1](../../../assets/img/frida_trace_system_server_1.png)
+![frida_trace_system_server_1](../../../assets/img/frida_trace_system_server_1.jpg)
 
-![frida_trace_system_server_2](../../../assets/img/frida_trace_system_server_2.png)
+![frida_trace_system_server_2](../../../assets/img/frida_trace_system_server_2.jpg)
 
-![frida_trace_system_server_3](../../../assets/img/frida_trace_system_server_3.png)
+![frida_trace_system_server_3](../../../assets/img/frida_trace_system_server_3.jpg)

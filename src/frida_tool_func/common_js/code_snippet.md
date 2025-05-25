@@ -1,5 +1,19 @@
 # js小的代码段
 
+## 判断java的Object是否是String字符串
+
+frida去hook安卓java中的（HashMap的put函数的第一个参数）java.lang.Object类型变量，想要转换成字符串值去比较，写法是：
+
+```js
+    func_HashMap_put.implementation = function (obj1, obj2) {
+...
+      var obj1Str = obj1.toString()
+      console.log("obj1Str=" + obj1Str)
+      if (obj1Str === "release_build"){
+        ...
+      }
+```
+
 ## 判断元素是否在列表数组中
 
 * 概述
