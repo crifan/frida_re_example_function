@@ -16,7 +16,6 @@
         * [所有类的所有函数](frida_re_example/frida/ios_objc/hook_func/cll_cls_all_func.md)
       * [ApiResolver](frida_re_example/frida/ios_objc/apiresolver/README.md)
       * [Stalker](frida_re_example/frida/ios_objc/stalker/README.md)
-        * [___lldb_unnamed_symbol2575$$akd](frida_re_example/frida/ios_objc/stalker/akd_lldb_unnamed_symbol2575.md)
     * [Android](frida_re_example/frida/android/README.md)
       * [demo示例](frida_re_example/frida/android/hook_demo.md)
       * [单个类](frida_re_example/frida/android/single_class/README.md)
