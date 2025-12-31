@@ -44,5 +44,6 @@
       * [JNI](frida_tool_func/android/android_class/jni.md)
     * [C](frida_tool_func/android/c/README.md)
       * [native C](frida_tool_func/android/c/native.md)
+* [Frida相关工具代码仓库](frida_code_repo/README.md)
 * [附录](appendix/README.md)
   * [参考资料](appendix/reference.md)

@@ -1,11 +1,11 @@
 # Frida逆向实例和工具函数
 
-* 最新版本：`v1.7.0`
-* 更新时间：`20250604`
+* 最新版本：`v1.8.0`
+* 更新时间：`20251231`
 
 ## 简介
 
-整理Frida逆向期间涉及到的各种实际案例，以及整理出的各种工具类函数。其中Frida的实际使用案例，包括网上别人的实例案例，包括官网的Cdeshare，以及frida和frida-trace。frida中包括iOS的ObjC的各种例子。包括Object对象的methods和ownMethods，以及用Interceptor去hook函数的，单个类的单个函数、单个类的所有函数、所有类的所有函数等。以及ApiResolver的案例以及Stalker的案例；接着是frida-trace的实际例子，包括ObjC的akd中Apple账号验证过程、Preferences中Apple账号登录全过程的详细内容。
+整理Frida逆向期间涉及到的各种实际案例，以及整理出的各种工具类函数，比如JsFridaUtil、FridaHookTemplate；其中Frida的实际使用案例，包括网上别人的实例案例，包括官网的Cdeshare，以及frida和frida-trace。frida中包括iOS的ObjC的各种例子。包括Object对象的methods和ownMethods，以及用Interceptor去hook函数的，单个类的单个函数、单个类的所有函数、所有类的所有函数等。以及ApiResolver的案例以及Stalker的案例；接着是frida-trace的实际例子，包括ObjC的akd中Apple账号验证过程、Preferences中Apple账号登录全过程的详细内容。
 
 ## 源码+浏览+下载
 
